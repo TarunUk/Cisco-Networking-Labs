@@ -1,0 +1,198 @@
+# Switch Layers Notes (CCNA Beginner)
+
+## What are Layered Switches?
+
+Switches are classified based on the OSI layer at which they operate.
+
+* Layer 1 (L1) → Physical Layer
+* Layer 2 (L2) → Data Link Layer
+* Layer 3 (L3) → Network Layer
+
+The higher the layer, the more intelligent the device becomes.
+
+---
+
+# Layer 1 (L1) Switch / Hub
+
+### Examples
+
+* Hub
+
+### Works With
+
+* Electrical signals
+
+### Can Do
+
+* Receive a signal from one port.
+* Send the signal to all other ports.
+
+### Cannot Do
+
+* Cannot learn MAC addresses.
+* Cannot create VLANs.
+* Cannot make forwarding decisions.
+
+### Why Use It?
+
+* Very old technology.
+* Rarely used in modern networks.
+
+### Easy Memory
+
+L1 = Signals
+
+---
+
+# Layer 2 (L2) Switch
+
+### Examples
+
+* Cisco 2960-24TT
+* Cisco 2950-24
+* Cisco 2950T-24
+* Switch-PT
+
+### Works With
+
+* MAC Addresses
+
+### Can Do
+
+* Connect devices in a LAN.
+* Learn MAC addresses.
+* Create VLANs.
+* Configure Trunks.
+* Use STP to prevent loops.
+* Use Port Security.
+
+### Cannot Do
+
+* Cannot route between VLANs.
+* Cannot communicate between different LANs.
+* Cannot perform IP routing.
+
+### Why Use It?
+
+* Most common switch in offices and labs.
+* Fast and inexpensive.
+* Ideal when devices only need communication within the same VLAN.
+
+### Example
+
+PC1 in VLAN 10
+
+PC2 in VLAN 10
+
+Result: ✅ Communication works
+
+PC1 in VLAN 10
+
+PC2 in VLAN 20
+
+Result: ❌ Communication fails
+
+### Easy Memory
+
+L2 = MAC Addresses
+
+---
+
+# Layer 3 (L3) Switch / Multilayer Switch
+
+### Examples
+
+* Cisco 3560-24PS
+* Cisco 3650-24PS
+* IE-3400 Multilayer Switch
+
+### Works With
+
+* MAC Addresses
+* IP Addresses
+
+### Can Do
+
+* Everything an L2 switch can do.
+* Route between VLANs.
+* Perform Inter-VLAN Routing.
+* Make forwarding decisions using IP addresses.
+
+### Cannot Do
+
+* Not designed to replace powerful WAN routers in large networks.
+
+### Why Use It?
+
+* When multiple VLANs need communication.
+* Reduces the need for a separate router.
+* Faster Inter-VLAN Routing.
+
+### Example
+
+PC1 in VLAN 10
+
+PC2 in VLAN 20
+
+Result: ✅ Communication works through routing
+
+### Easy Memory
+
+L3 = IP Addresses + Routing
+
+---
+
+# Industrial Switches
+
+### IE-2000
+
+* Layer 2 Industrial Switch.
+* Used in factories and industrial environments.
+
+### IE-3400
+
+* Layer 3 Industrial Switch.
+* Supports routing and switching.
+* Used in industrial networks.
+
+---
+
+# Bridge
+
+### Example
+
+* Bridge-PT
+
+### Can Do
+
+* Connect two network segments.
+* Filter traffic using MAC addresses.
+
+### Note
+
+* Bridges are older devices.
+* Modern switches have mostly replaced bridges.
+
+---
+
+# Quick Comparison
+
+| Feature            | L1 | L2 | L3 |
+| ------------------ | -- | -- | -- |
+| Uses Signals       | ✅  | ❌  | ❌  |
+| Uses MAC Address   | ❌  | ✅  | ✅  |
+| Uses IP Address    | ❌  | ❌  | ✅  |
+| VLAN Support       | ❌  | ✅  | ✅  |
+| Inter-VLAN Routing | ❌  | ❌  | ✅  |
+
+---
+
+# Most Important CCNA Rule
+
+2960 / 2950 = Layer 2 Switch
+
+3560 / 3650 = Layer 3 Switch
+
+Need VLANs only? → Use 2960
+
+Need VLANs + Routing between VLANs? → Use 3560
